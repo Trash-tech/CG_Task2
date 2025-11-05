@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.canvas.Canvas?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<AnchorPane fx:id="anchorPane" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.cgvsu.rasterizationfxapp.RasterizationController">
+
+    <!-- Верхняя панель для задания параметров -->
+    <VBox prefHeight="40.0" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 5;">
+            <ColorPicker fx:id="startColorPicker" />
+            <ColorPicker fx:id="endColorPicker" />
+
+            <Label text="Угол 1:"/>
+            <TextField fx:id="angle1Field" promptText="-30" prefWidth="60"/>
+
+            <Label text="Угол 2:"/>
+            <TextField fx:id="angle2Field" promptText="30" prefWidth="60"/>
+
+            <Label text="Толщина линии:"/>
+            <TextField fx:id="pxOfLine" promptText="2" prefWidth="60"/>
+            <Label text="px"/>
+
+            <Button fx:id="drawButton" text="Нарисовать"/>
+        </HBox>
+    </VBox>
+
+    <!-- Холст -->
+    <Canvas fx:id="canvas" width="1200" height="800"
+            AnchorPane.topAnchor="40.0"
+            AnchorPane.leftAnchor="0.0"
+            AnchorPane.rightAnchor="0.0"
+            AnchorPane.bottomAnchor="0.0"/>
+</AnchorPane>

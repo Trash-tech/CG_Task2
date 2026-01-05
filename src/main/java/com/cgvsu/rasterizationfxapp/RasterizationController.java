@@ -1,8 +1,8 @@
 package com.cgvsu.rasterizationfxapp;
 
-import com.cgvsu.fortask.ColoredArc;
-import com.cgvsu.fortask.DrawManager;
-import com.cgvsu.fortask.DrawObj;
+import com.cgvsu.rasterization.ColoredArc;
+import com.cgvsu.rasterization.DrawManager;
+import com.cgvsu.rasterization.DrawObj;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;

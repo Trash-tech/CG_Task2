@@ -5,6 +5,6 @@ module com.cgvsu.rasterizationfxapp {
 
     opens com.cgvsu.rasterizationfxapp to javafx.fxml;
     exports com.cgvsu.rasterizationfxapp;
-    exports com.cgvsu.fortask;
-    opens com.cgvsu.fortask to javafx.fxml;
+    exports com.cgvsu.rasterization;
+    opens com.cgvsu.rasterization to javafx.fxml;
 }

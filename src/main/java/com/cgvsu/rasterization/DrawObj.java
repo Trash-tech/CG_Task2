@@ -1,4 +1,4 @@
-package com.cgvsu.fortask;
+package com.cgvsu.rasterization;
 
 import javafx.scene.canvas.GraphicsContext;
 

@@ -1,4 +1,4 @@
-package com.cgvsu.fortask;
+package com.cgvsu.rasterization;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
@@ -6,7 +6,7 @@ import javafx.scene.image.PixelWriter;
 
 public class ColoredArc implements DrawObj {
 
-    private final int xC, yC, r, sizePx;
+    private final int xC, yC, r, sizePx;    
     private final double angle1, angle2;
     private final Color startColor, endColor;
     private final double fullCircle = 2 * Math.PI;
@@ -61,7 +61,7 @@ public class ColoredArc implements DrawObj {
     }
 
     private void drawPixel(PixelWriter pixelWriter, int x, int y) {
-        double currAngle = Math.atan2(-y, x);
+        double currAngle     = Math.atan2(-y, x);
         double normCurrAngle = normAngle(currAngle);
         double normAngle1 = normAngle(angle1);
         double normAngle2 = normAngle(angle2);
@@ -101,6 +101,10 @@ public class ColoredArc implements DrawObj {
         double normCurrAngle = normAngle(currAngle);
         double normAngle1 = normAngle(angle1);
         double normAngle2 = normAngle(angle2);
+        if (Math.abs(angle2 - angle1) < 1e-9 ||
+                Math.abs((angle2 - angle1) % (2 * Math.PI)) < 1e-9) {
+            return true;
+        }
         if (normAngle1 <= normAngle2) {
             return normCurrAngle >= normAngle1 && normCurrAngle <= normAngle2;
         } else {
